@@ -13,7 +13,7 @@ Display a comprehensive status overview of the project.
 1. Use Bash to check if tracks file exists: `test -f conductor/tracks.md && echo "exists" || echo "not found"`
 2. If "not found": "Conductor not set up. Run `/conductor:setup` to initialize."
 3. If "exists", read `conductor/tracks.md` and verify it is not empty
-4. If empty: "No tracks found. Create one with `/conductor:newTrack`."
+4. If empty: "No tracks found. Create one with `/conductor:new-track`."
 
 ## Gather Data
 
@@ -115,7 +115,7 @@ If any task is marked with "BLOCKED" in the plan:
   Total tracks completed: 5
   Total tasks completed: 47
 
-  Create a new track with /conductor:newTrack
+  Create a new track with /conductor:new-track
 ```
 
 ### Summary Statistics

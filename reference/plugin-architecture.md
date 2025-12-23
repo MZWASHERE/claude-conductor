@@ -10,7 +10,7 @@ conductor-claude/
 │   └── plugin.json                    # Plugin manifest
 ├── commands/
 │   ├── setup.md                       # /conductor:setup
-│   ├── new-track.md                   # /conductor:newTrack
+│   ├── new-track.md                   # /conductor:new-track
 │   ├── implement.md                   # /conductor:implement
 │   ├── status.md                      # /conductor:status
 │   └── revert.md                      # /conductor:revert
@@ -107,7 +107,7 @@ Check for existing conductor/ directory:
 ...
 ```
 
-### `/conductor:newTrack`
+### `/conductor:new-track`
 
 ```markdown
 ---
@@ -432,7 +432,7 @@ Add to `.claude/settings.json`:
 All commands are namespaced with the plugin name:
 
 - `/conductor:setup`
-- `/conductor:newTrack`
+- `/conductor:new-track`
 - `/conductor:implement`
 - `/conductor:status`
 - `/conductor:revert`

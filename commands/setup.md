@@ -225,5 +225,5 @@ Update state: `{"last_successful_step": "complete"}`
    > Next steps:
    >
    > - Run `/conductor:implement` to start working on the first track
-   > - Run `/conductor:newTrack` to create additional tracks
+   > - Run `/conductor:new-track` to create additional tracks
    > - Run `/conductor:status` to see project progress"

@@ -90,13 +90,13 @@ What do you want to build? [describe your first feature]
 
 ---
 
-### `/conductor:newTrack`
+### `/conductor:new-track`
 
 Create a new feature, bug, or chore track.
 
 **Usage:**
 ```
-/conductor:newTrack [description]
+/conductor:new-track [description]
 ```
 
 **Arguments:**
@@ -111,7 +111,7 @@ Create a new feature, bug, or chore track.
 
 **Example:**
 ```
-> /conductor:newTrack Add user authentication with OAuth
+> /conductor:new-track Add user authentication with OAuth
 
 Creating feature track...
 I have some questions to clarify the requirements:
@@ -318,7 +318,7 @@ Run /conductor:setup first to initialize the conductor/ directory.
 
 **"No tracks found"**
 ```
-Run /conductor:newTrack to create your first track.
+Run /conductor:new-track to create your first track.
 ```
 
 **"You have uncommitted changes"**

@@ -10,7 +10,7 @@ This directory contains working examples of all plugin components.
 examples/
 ├── commands/           # Slash command implementations
 │   ├── setup.md       # /conductor:setup
-│   ├── new-track.md   # /conductor:newTrack
+│   ├── new-track.md   # /conductor:new-track
 │   ├── implement.md   # /conductor:implement
 │   ├── status.md      # /conductor:status
 │   └── revert.md      # /conductor:revert
@@ -31,7 +31,7 @@ examples/
 | Command                | File                                    | Description                    |
 | ---------------------- | --------------------------------------- | ------------------------------ |
 | `/conductor:setup`     | [setup.md](./commands/setup.md)         | Initialize project environment |
-| `/conductor:newTrack`  | [new-track.md](./commands/new-track.md) | Create feature/bug track       |
+| `/conductor:new-track`  | [new-track.md](./commands/new-track.md) | Create feature/bug track       |
 | `/conductor:implement` | [implement.md](./commands/implement.md) | Execute tasks with TDD         |
 | `/conductor:status`    | [status.md](./commands/status.md)       | Display progress report        |
 | `/conductor:revert`    | [revert.md](./commands/revert.md)       | Git-aware rollback             |

@@ -79,4 +79,4 @@ The following files are **generated dynamically** during setup based on user Q&A
 - `product.md` - Product vision, goals, users (from interactive questions)
 - `product-guidelines.md` - Brand voice, design standards (from interactive questions)
 - `tech-stack.md` - Technologies, frameworks (from project detection + user input)
-- `tracks.md` - Master track list (created empty, populated by `/conductor:newTrack`)
+- `tracks.md` - Master track list (created empty, populated by `/conductor:new-track`)

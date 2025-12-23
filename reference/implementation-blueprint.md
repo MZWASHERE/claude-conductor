@@ -244,7 +244,7 @@ Add to all commands:
 Full workflow test:
 
 1. Fresh project → /conductor:setup
-2. Create track → /conductor:newTrack
+2. Create track → /conductor:new-track
 3. Implement → /conductor:implement
 4. Check status → /conductor:status
 5. Revert if needed → /conductor:revert

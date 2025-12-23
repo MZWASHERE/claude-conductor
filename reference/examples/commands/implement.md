@@ -18,7 +18,7 @@ Execute the implementation workflow for the selected track.
 
 2. **Check for tracks**:
    - Parse `conductor/tracks.md`
-   - If empty or malformed: "No tracks found. Create one with `/conductor:newTrack`."
+   - If empty or malformed: "No tracks found. Create one with `/conductor:new-track`."
 
 ## Track Selection
 
@@ -32,7 +32,7 @@ Execute the implementation workflow for the selected track.
 
 1. Find first incomplete track (`[ ]` or `[~]`)
 2. Announce: "Selecting next incomplete track: '<description>'"
-3. If no incomplete tracks: "All tracks complete! Create a new one with `/conductor:newTrack`."
+3. If no incomplete tracks: "All tracks complete! Create a new one with `/conductor:new-track`."
 
 ## Begin Implementation
 

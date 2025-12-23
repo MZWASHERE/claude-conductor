@@ -246,7 +246,7 @@ AskUserQuestion({
 Instead of one massive prompt, delegate to specialists:
 
 ```markdown
-# In /conductor:newTrack command
+# In /conductor:new-track command
 
 When generating the specification:
 

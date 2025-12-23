@@ -30,7 +30,7 @@ Conductor provides 5 core commands:
 | Command | Purpose | Generated Artifacts |
 |---------|---------|---------------------|
 | `/conductor:setup` | One-time project initialization | `product.md`, `tech-stack.md`, `workflow.md`, `tracks.md` |
-| `/conductor:newTrack` | Create feature/bug work unit | `spec.md`, `plan.md`, `metadata.json` |
+| `/conductor:new-track` | Create feature/bug work unit | `spec.md`, `plan.md`, `metadata.json` |
 | `/conductor:implement` | Execute planned tasks | Updates to plans, commits |
 | `/conductor:status` | Display progress overview | None (read-only) |
 | `/conductor:revert` | Undo work logically | Git reverts |

@@ -12,7 +12,7 @@ Display a comprehensive status overview of the project.
 1. Verify `conductor/tracks.md` exists
 2. If missing: "Conductor not set up. Run `/conductor:setup` to initialize."
 3. Verify file is not empty
-4. If empty: "No tracks found. Create one with `/conductor:newTrack`."
+4. If empty: "No tracks found. Create one with `/conductor:new-track`."
 
 ## Gather Data
 
@@ -113,7 +113,7 @@ If any task is marked with "BLOCKED" in the plan:
   Total tracks completed: 5
   Total tasks completed: 47
 
-  Create a new track with /conductor:newTrack
+  Create a new track with /conductor:new-track
 ```
 
 ### Summary Statistics
