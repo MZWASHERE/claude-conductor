@@ -11,12 +11,14 @@ You are initializing the Conductor context-driven development environment. Follo
 ## Pre-flight Check
 
 1. **Check for existing setup**:
-   - Look for `conductor/setup_state.json`
-   - If exists, read it and offer to resume from last successful step
-   - If `last_successful_step` is "complete", inform user setup is done
+   - Use Bash to test if `conductor/setup_state.json` exists: `test -f conductor/setup_state.json && echo "exists" || echo "not found"`
+   - If "exists", read the file and offer to resume from last successful step
+   - If `last_successful_step` is "complete", inform user setup is already done
+   - If "not found", proceed with fresh setup
 
 2. **Check for conductor directory**:
-   - If `conductor/` exists without state file, warn about potential overwrite
+   - Use Bash to test if `conductor/` exists: `test -d conductor && echo "exists" || echo "not found"`
+   - If "exists" but no state file found, warn about potential overwrite
    - Ask user to confirm before proceeding
 
 ## Phase 1: Project Discovery
