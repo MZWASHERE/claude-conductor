@@ -35,12 +35,16 @@ claude --plugin-dir /path/to/conductor
 
 You should see the 5 conductor commands listed.
 
-### Production (via Marketplace)
+### Production (via GitHub Marketplace)
 
-Once published to a marketplace, install with:
+Add the GitHub repository as a marketplace and install:
 
 ```bash
-claude plugin install conductor@<marketplace-name>
+# Add this repository as a marketplace
+/plugin marketplace add lackeyjb/claude-conductor
+
+# Install the plugin
+/plugin install conductor@claude-conductor
 ```
 
 ### Symlink Installation (Alternative)
