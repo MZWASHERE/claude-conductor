@@ -1,0 +1,26 @@
+{
+  "name": "conductor",
+  "owner": {
+    "name": "Bryan Lackey",
+    "email": "lackeyjb@users.noreply.github.com"
+  },
+  "metadata": {
+    "description": "Context-Driven Development framework for Claude Code",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "conductor",
+      "description": "Context-Driven Development framework for Claude Code",
+      "version": "0.1.0",
+      "source": ".",
+      "author": {
+        "name": "Bryan Lackey"
+      },
+      "repository": "https://github.com/lackeyjb/claude-conductor",
+      "license": "Apache-2.0",
+      "keywords": ["context-driven", "development", "planning", "implementation"],
+      "category": "workflow"
+    }
+  ]
+}
