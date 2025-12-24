@@ -1,4 +1,4 @@
-# Conductor
+# Claude Conductor
 
 Context-Driven Development framework for Claude Code.
 
