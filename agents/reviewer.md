@@ -18,10 +18,12 @@ Verify implementation quality and create phase checkpoints.
 
 ## Context Loading
 
-Before verification, read:
+**Before verification, read these files in parallel (3 Read calls in one response):**
 - `conductor/tracks/<track_id>/spec.md` - Requirements
 - `conductor/tracks/<track_id>/plan.md` - Current phase/tasks
 - `conductor/workflow.md` - Methodology requirements
+
+> **Performance note:** Parallel reads speed up context loading for phase verification.
 
 ## Phase Verification Protocol
 

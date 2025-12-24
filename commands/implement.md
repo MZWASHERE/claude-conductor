@@ -11,16 +11,20 @@ Execute the implementation workflow for the selected track.
 
 ## Pre-flight Checks
 
+**Run these checks in parallel (single response with multiple Bash calls):**
+
 1. **Verify Conductor Setup**:
 
-   - Use Bash to check required files exist:
-     ```bash
-     test -f conductor/tech-stack.md && test -f conductor/workflow.md && test -f conductor/product.md && echo "ready" || echo "missing"
-     ```
+   ```bash
+   test -f conductor/tech-stack.md && test -f conductor/workflow.md && test -f conductor/product.md && echo "ready" || echo "missing"
+   ```
    - If "missing": "Conductor is not set up. Please run `/conductor:setup` first."
 
 2. **Check for tracks**:
-   - Use Bash to check: `test -f conductor/tracks.md && echo "exists" || echo "not found"`
+
+   ```bash
+   test -f conductor/tracks.md && echo "exists" || echo "not found"
+   ```
    - If "not found": "No tracks found. Create one with `/conductor:new-track`."
    - If "exists", read and parse `conductor/tracks.md`
    - If empty or malformed: "No tracks found. Create one with `/conductor:new-track`."
@@ -78,11 +82,14 @@ Before starting, check if resuming from a previous handoff:
 
 ### Load Track Context
 
-Read into context:
+**Read these files in parallel (use multiple Read tool calls in one response):**
 
 - `conductor/tracks/<track_id>/plan.md`
 - `conductor/tracks/<track_id>/spec.md`
 - `conductor/workflow.md`
+- `conductor/tech-stack.md`
+
+> **Performance note:** These files are independent and can be read simultaneously.
 
 ## Phase Discovery
 

@@ -20,12 +20,28 @@ Initialize Conductor context-driven development environment. Follow protocol pre
 
 ### 1.1 Detect Project Maturity
 
-**Brownfield indicators** (check in order):
-1. `.git` directory exists
-2. Manifest files exist (`package.json`, `requirements.txt`, `go.mod`, `pom.xml`)
-3. Code directories exist (`src/`, `app/`, `lib/`)
+**Check brownfield indicators in parallel (3 Bash calls in one response):**
 
-**Greenfield:** None found, directory empty or only README.
+1. **Git check:**
+   ```bash
+   test -d .git && echo "git:yes" || echo "git:no"
+   ```
+
+2. **Manifest check:**
+   ```bash
+   ls package.json requirements.txt go.mod pom.xml Cargo.toml 2>/dev/null | head -1 || echo "manifest:none"
+   ```
+
+3. **Source directories check:**
+   ```bash
+   ls -d src app lib 2>/dev/null | head -1 || echo "src:none"
+   ```
+
+**Evaluation:**
+- **Brownfield:** Any indicator returns positive result
+- **Greenfield:** All checks return negative/none, directory empty or only README
+
+> **Performance note:** Running these checks in parallel speeds up project discovery.
 
 ### 1.2 Execute by Maturity
 

@@ -19,12 +19,16 @@ Execute development tasks with discipline, quality, and TDD methodology adherenc
 
 ## Context Loading
 
-Before implementing, read:
+**Before implementing, read these files in parallel (4 Read calls in one response):**
 - `conductor/tracks/<track_id>/plan.md` - Implementation plan
 - `conductor/tracks/<track_id>/spec.md` - Requirements
 - `conductor/workflow.md` - Methodology
 - `conductor/tech-stack.md` - Technologies
-- Relevant `conductor/code_styleguides/*.md`
+
+**Then read applicable styleguides:**
+- Relevant `conductor/code_styleguides/*.md` (based on languages in task)
+
+> **Performance note:** Parallel reads speed up context loading for each task.
 
 ## TDD Cycle
 
@@ -80,6 +84,15 @@ Before marking task complete, verify:
 - [ ] No type errors
 - [ ] Code follows styleguide
 - [ ] No security vulnerabilities
+
+### Performance Optimization
+
+For long-running test suites or builds:
+- Consider running tests in background: Use `run_in_background: true` parameter with Bash tool
+- Can prepare next task while waiting for results
+- Always check results before marking task complete
+
+> **Note:** Claude Code supports background bash execution for long operations.
 
 ## When Blocked
 

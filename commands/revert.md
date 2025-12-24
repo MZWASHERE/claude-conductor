@@ -37,11 +37,29 @@ Use AskUserQuestion: "Revert [Phase] 'Backend API' from track 'user_auth'?" Yes/
 
 ## Phase 2: Git Analysis
 
-1. **Extract commit SHAs** from target's plan.md (lines like `- [x] Task [a1b2c3d]`)
-2. **Verify commits exist:** `git cat-file -t <sha>`. If missing, search by message: `git log --oneline --all | grep "<message>"`
-3. **Find plan update commits:** `git log --oneline -- conductor/tracks/<id>/plan.md` matching task descriptions
-4. **For track reverts:** Find creation commit in `conductor/tracks.md` history
-5. **Compile ordered list** (newest first) of all commits to revert (implementation + plan updates)
+**Run these git operations in parallel (multiple Bash calls in one response):**
+
+1. **Extract commit SHAs** from target's plan.md:
+   ```bash
+   grep -o '\[[x~]\].*\[[a-f0-9]\{7\}\]' conductor/tracks/<id>/plan.md
+   ```
+
+2. **Find plan update commits:**
+   ```bash
+   git log --oneline -- conductor/tracks/<id>/plan.md
+   ```
+
+3. **For track reverts - find creation commit:**
+   ```bash
+   git log --oneline -- conductor/tracks.md | grep -i "add track"
+   ```
+
+**Sequential verification:**
+- After parallel reads, verify each extracted SHA exists: `git cat-file -t <sha>`
+- If missing, search by message: `git log --oneline --all | grep "<message>"`
+- Compile ordered list (newest first) of all commits to revert (implementation + plan updates)
+
+> **Performance note:** Parallelizing git read operations speeds up revert preparation.
 
 ## Phase 3: Execution Plan
 

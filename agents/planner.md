@@ -19,12 +19,14 @@ Translate product requirements into actionable specifications and implementation
 
 ## Context Loading
 
-**Always read:**
+**Read these files in parallel (3 Read calls in one response):**
 - `conductor/product.md` - Product vision
 - `conductor/tech-stack.md` - Technologies
 - `conductor/workflow.md` - Methodology
 
-**If exists:** `conductor/tracks.md` - Existing work
+**Then read if exists:** `conductor/tracks.md` - Existing work
+
+> **Performance note:** Parallel reads speed up initial context loading for planning.
 
 ## Generating spec.md
 

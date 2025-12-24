@@ -15,12 +15,26 @@ Display comprehensive project status overview.
 
 ## Gather Data
 
-- Read `conductor/product.md` for project name
-- Read `conductor/tracks.md` for track list
-- For each track in `conductor/tracks/`:
-  - Read `plan.md`
-  - Count tasks: `[ ]` pending, `[~]` in-progress, `[x]` completed
-  - Identify current phase and task
+### Step 1: Read Core Files (Parallel)
+
+**Use parallel Read tool calls for:**
+- `conductor/product.md` - Project name and context
+- `conductor/tracks.md` - Track list and status
+
+### Step 2: Read All Track Plans (Parallel)
+
+After listing track directories with `ls conductor/tracks/`, **issue parallel Read calls for all track `plan.md` files:**
+- `conductor/tracks/<track1>/plan.md`
+- `conductor/tracks/<track2>/plan.md`
+- (etc. for all tracks)
+
+For each plan.md, count:
+- `[ ]` pending tasks
+- `[~]` in-progress tasks
+- `[x]` completed tasks
+- Identify current phase and task
+
+> **Performance note:** Reading all track plans in parallel significantly speeds up status reporting for projects with multiple tracks.
 
 ## Generate Report
 

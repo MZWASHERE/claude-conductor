@@ -11,8 +11,15 @@ Create new track (feature/bug/chore) with spec and plan.
 
 ## Pre-flight Checks
 
-1. Verify `conductor/tech-stack.md`, `conductor/workflow.md`, `conductor/product.md` exist. If any missing: "Run `/conductor:setup` first."
-2. Read `conductor/tracks.md` if exists to list existing track IDs (avoid duplicates)
+**Read these files in parallel (4 Read calls in one response):**
+1. `conductor/tech-stack.md` - Verify exists, load tech context
+2. `conductor/workflow.md` - Verify exists, load workflow context
+3. `conductor/product.md` - Verify exists, load product context
+4. `conductor/tracks.md` - Get existing track IDs (handle if missing)
+
+If any of the first 3 files are missing: "Run `/conductor:setup` first."
+
+> **Performance note:** Parallel reads speed up pre-flight verification.
 
 ## Get Track Description
 
