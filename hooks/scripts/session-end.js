@@ -5,10 +5,11 @@ const fs = require('fs').promises;
 const path = require('path');
 
 async function main() {
-  let input = '';
+  const chunks = [];
   for await (const chunk of process.stdin) {
-    input += chunk;
+    chunks.push(chunk);
   }
+  const input = chunks.join('');
 
   const data = JSON.parse(input);
   const cwd = data.cwd || process.cwd();

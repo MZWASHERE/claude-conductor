@@ -4,10 +4,11 @@
 const path = require('path');
 
 async function main() {
-  let input = '';
+  const chunks = [];
   for await (const chunk of process.stdin) {
-    input += chunk;
+    chunks.push(chunk);
   }
+  const input = chunks.join('');
 
   const data = JSON.parse(input);
   const filePath = data.tool_input?.file_path || '';

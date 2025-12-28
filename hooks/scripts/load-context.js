@@ -4,11 +4,33 @@
 const fs = require('fs').promises;
 const path = require('path');
 
-async function main() {
-  let input = '';
-  for await (const chunk of process.stdin) {
-    input += chunk;
+// Batched file reads with concurrency limit to prevent file descriptor exhaustion
+async function batchedReadHandoffs(trackIds, tracksDir, concurrency = 5) {
+  const results = [];
+  for (let i = 0; i < trackIds.length; i += concurrency) {
+    const batch = trackIds.slice(i, i + concurrency);
+    const batchResults = await Promise.all(batch.map(async (trackId) => {
+      try {
+        const content = await fs.readFile(
+          path.join(tracksDir, trackId, 'handoff-state.json'),
+          'utf8'
+        );
+        return { trackId, handoff: JSON.parse(content) };
+      } catch {
+        return null;
+      }
+    }));
+    results.push(...batchResults);
   }
+  return results.filter(Boolean);
+}
+
+async function main() {
+  const chunks = [];
+  for await (const chunk of process.stdin) {
+    chunks.push(chunk);
+  }
+  const input = chunks.join('');
 
   const data = JSON.parse(input);
   const cwd = data.cwd || process.cwd();
@@ -50,25 +72,20 @@ async function main() {
     }
   }
 
-  // Check for pending handoff state (parallel reads)
-  const handoffChecks = trackIds.map(async (trackId) => {
-    try {
-      const handoffContent = await fs.readFile(
-        path.join(tracksDir, trackId, 'handoff-state.json'),
-        'utf8'
-      );
-      return { trackId, handoff: JSON.parse(handoffContent) };
-    } catch {
-      return null;
-    }
-  });
-
-  const handoffs = (await Promise.all(handoffChecks)).filter(Boolean);
+  // Check for pending handoff state (batched reads with concurrency limit)
+  const handoffs = await batchedReadHandoffs(trackIds, tracksDir);
   if (handoffs.length > 0) {
     const { trackId, handoff } = handoffs[0]; // Only show first
     context += `\n**⚠️ Handoff Pending:** Track '${trackId}' was paused at ${handoff.threshold_percent || 70}% context threshold.\n`;
     context += `**Next Task:** ${handoff.next_task || 'Unknown'}\n`;
     context += `**Resume:** Run \`/conductor:implement\` to continue.\n`;
+  }
+
+  // Check for orphaned worktrees (agents that may have crashed)
+  const worktreesDir = path.join(cwd, '.worktrees');
+  const worktrees = await fs.readdir(worktreesDir).catch(() => []);
+  if (worktrees.length > 0) {
+    context += `\n**⚠️ ${worktrees.length} worktree(s) detected.** Run \`/conductor:agents\` to check status and clean up if needed.\n`;
   }
 
   // Output JSON with context

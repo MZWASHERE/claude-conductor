@@ -179,6 +179,12 @@ For long-running tasks or parallel workflows, run the implementer in background:
 - Task is estimated to take significant time
 - User wants to work on unrelated tasks in parallel
 
+**Resource Warning:**
+- Each background agent runs tests independently, consuming significant CPU
+- Limit to 2-3 concurrent background agents to avoid system overload
+- On resource-constrained systems, prefer `parallel_agents: sequential` mode
+- Use `/conductor:agents` to monitor running agents and clean up orphaned worktrees
+
 **Worktree isolation (if `parallel_agents: worktree` in workflow.md):**
 
 1. **Before spawning agent**, create isolated worktree:
